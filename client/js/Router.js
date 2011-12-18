@@ -21,8 +21,8 @@ define([
   };
 
   new $.mobile.Router({
-    "#one": { handler: Router.one, events: "bs" },
-    "#two": { handler: Router.two, events: "bs" },
-    "#popup": { handler: Router.popup, events: "bs" }
+    "#one": { handler: Router.one, events: "bc" },
+    "#two": { handler: Router.two, events: "bc" },
+    "#popup": { handler: Router.popup, events: "bc" }
   });
 });
