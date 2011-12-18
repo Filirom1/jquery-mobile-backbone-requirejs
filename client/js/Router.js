@@ -6,7 +6,11 @@ define([
   'js/views/TwoView',
   'js/views/PopupView'
 ], function($, _, Backbone, OneView, TwoView, PopupView){
-  var Router = {
+  new $.mobile.Router({
+    "/one":   { handler: 'one', events: "bc" },
+    "/two":   { handler: 'two', events: "bc" },
+    "/popup": { handler: 'popup', events: "bc" }
+  }, {
     one: function(){
       new OneView().render();
     },
@@ -17,12 +21,13 @@ define([
 
     popup: function(){
       new PopupView().render();
-    }
-  };
+    },
 
-  new $.mobile.Router({
-    "#one": { handler: Router.one, events: "bc" },
-    "#two": { handler: Router.two, events: "bc" },
-    "#popup": { handler: Router.popup, events: "bc" }
+    'default': function(){
+      console.log('No route found.');
+    }
+  }, {
+    ajaxApp: true,
+    defaultHandler: 'default'
   });
 });
