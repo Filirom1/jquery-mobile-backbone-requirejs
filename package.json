@@ -1,0 +1,17 @@
+{
+  "author": "",
+  "name": "jquery-mobile-backbone-requirejs",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Filirom1/jquery-mobile-backbone-requirejs.git"
+  },
+  "dependencies": {
+    "express": "~2.5.9"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
