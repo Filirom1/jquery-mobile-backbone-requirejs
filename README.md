@@ -24,10 +24,10 @@ Backbone and jQuery mobile both has Routers.
 jQM Router handle transition well. Go left, when the page change, and go right when you click back. Very smooth! Unfortunatly, jQM doesn't accept parameters in routes.
 
 So if you need this, you will have to listen to `pagebeforechange` event
-to prevent the default behaviour and then call `$.mobile.changePage() ` manualy.
-Manualy, you will have to say the route to trigger, the direction of the animation (left or right ?), ...
+to prevent the default behaviour and then call `$.mobile.changePage() ` manually.
+When calling chagePage manually, you must pass the route to trigger, the direction of the animation (left or right ?), as well as any other desired configurations.
 
-There is an exemple of how to do this with the Backbone Router here : <https://github.com/addyosmani/backbone-mobile-search>
+There is an example of how to do this with the Backbone Router here : <https://github.com/addyosmani/backbone-mobile-search>
 
 Or you can use the [jQuery Mobile Router plugin](https://github.com/azicchetti/jquerymobile-router)
 
@@ -39,7 +39,7 @@ property on each `data-role="page"` to the url defined in the jQM Router.
 In so doing, jQM knows what URL to trigger when you (or jQM) call
 `$.mobile.changePage('pageID')`
 
-For more details take a look at <http://jquerymobile.com/demos/1.0/docs/pages/page-navmodel.html>. You will learn that the index page if the first `data-role="page"` present in the DOM.
+For more details take a look at <http://jquerymobile.com/demos/1.0/docs/pages/page-navmodel.html>. You will learn that the index page is the first `data-role="page"` present in the DOM.
 
 
 DOM injection
@@ -77,7 +77,7 @@ the data-url.
 Now, if we want to inject HTML before rendering the view, we will need
 to do it before the page is created : beforeCreate (bc).
 
-If we did it after page creation, for exemple before show (bs), elements
+If we did it after page creation, for example before show (bs), elements
 like `data-role="header"`, `data-role="footer"`, ... will not be
 enhanced by jQM after injection.
 
@@ -85,7 +85,7 @@ enhanced by jQM after injection.
 Templates and code structure
 -----------------------------
 
-Personnally I hate to debug HTML in JS files. To avoid this I use
+Personnally I hate debugging HTML in JS files. To avoid this I use
 [RequireJS](http://www.requirejs.org/) with the [text plugin](http://www.requirejs.org/docs/api.html#text)
 
 Look the syntax is quite simple :
@@ -99,11 +99,11 @@ Look the syntax is quite simple :
     });
 
 RequireJS is also a good help with Backbone application. The famous Todo
-exemple is great, but everything is in one single file. Arrgggh.
+example is great, but everything is in one single file. Arrgggh.
 
 With RequireJS you can split your code in smaller units.
 
-Take a look at the Todo exemple `Backbone + RequireJS` : <https://github.com/addyosmani/todomvc/tree/master/todo-example/backbone+require>
+Take a look at the Todo example `Backbone + RequireJS` : <https://github.com/addyosmani/todomvc/tree/master/todo-example/backbone+require>
 
 PushState
 ---------
